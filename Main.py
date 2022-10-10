@@ -1,9 +1,12 @@
 from typing import List
-
 def selectionSort(array, size) -> List[int]:
-  # Write your code here
-
-# Do not change the following code
+  for y in range(len(array)):
+    mid = y
+    for j in range(y+1,len(array)):
+      if array[mid] > array[j]:
+        mid = j
+    array[y], array[mid] = array[mid] , array[y]
+  return array
 input_data = input()
 data = []
 for item in input_data.split(', '):
